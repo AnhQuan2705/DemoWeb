@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta lang="vi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    
+    <div>
+        <div id="pageMessages">
+
+    </div>
+<div >
+    
+    <p class="h4" id="head">ĐĂNG KÝ HỒ SƠ XÉT TUYỂN ĐÀO TẠO TRÌNH ĐỘ THẠC SĨ THEO ĐỊNH HƯỚNG NGHIÊN CỨU</p>
+
+</div>
+<div id="tt">
+<div class= "container-fluid">
+    <div class="headcontainer">
+        <p>
+            <b >
+            <a id="a1">I.Thông tin cá nhân</a>(lưu ý mục đánh dấu (<a id="sao">*</a>) là bắt buộc)
+            </b>
+        </p>
+    </div>
+    <hr width="100%" color="#CCCCCC">
+    <div>
+        <div class= "row">
+            <div class ="col-4 ">
+                <p>
+                   <a id="ten"> Họ và tên thí sinh (<a id="sao">*</a>)</a>
+                    <br>
+                    <input type="text" onblur="checkval(this,'name_er')" id="hoten" ></input>
+                    <p class="name_er" style="display:none;" id="er">Vui lòng nhập họ tên</p>
+            </p>
+            </div>
+            <div class ="col-4 ">
+                <p >
+                    <a id="ten">Giới tính (<a id="sao">*</a>)</a></a>
+                    <br>
+            
+                     <select name="lựa chọns" id="gioitinh"  >
+                        <option >Chọn giới tinh</option>
+                        <option>Nam</option>
+                        <option>Nữ</option>
+                    </select>  
+                </p>   
+                    
+                
+            </div>
+            <div class ="col-4 ">
+                <p id="ngaysinh">
+                    <a id="ten">Ngày sinh (<a id="sao">*</a>)</a>
+                    <br>
+                    <input type="date" name="ngaysinh" id="ngaysinh" >
+                </p>
+            </div>
+        </div>
+        <div class= "row">
+            <div class ="col-4 ">
+                <p >
+                    <a id="ten" > Nơi sinh (<a id="sao">*</a>)</a>
+                    <br>
+                    <select name="lựa chọns" id="noisinh">
+                        <option></option>
+                        <option>An Giang</option>
+                        <option>Bà rịa-Vũng Tàu</option>
+                        <option>Bạc Liêu</option>
+                        <option>Bắc Giang</option>
+                        <option>Bắc Cạn</option>
+                        <option>Bắc Ninh</option>
+                        <option>Bến Tre</option>
+                        <option>Bình Dương</option>
+                        <option>Bình Định</option>
+                        <option>Bắc Giang</option>
+                    </select>  
+                    
+            </p>
+            </div>
+            <div class ="col-4 ">
+                <p >
+                    <a id="ten">Dân tộc (<a id="sao">*</a>)</a>
+                    <br>
+                    <input type="text" onblur="checkval(this,'dantoc_er')" id="dantoc" ></input>
+                    <p class="dantoc_er" style="display:none;" id="er">Vui lòng nhập dân tộc</p>
+                </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <a id="ten">Quốc tịch (<a id="sao">*</a>)</a>
+                    <br>
+                    <select name="lựa chọns" id="quoctich">
+                        <option></option>
+                        <option>Nam</option>
+                        <option>Nữ</option>
+                    </select>  
+                </p>
+            </div>
+        </div>
+        <div class= "row">
+            <div class ="col-4 ">
+                <p>
+                     <a id="ten"> Tôn giáo (<a id="sao">*</a>)</a>
+                    <br>
+                    <input type="text" onblur="checkval(this,'tongiao_er')" id="tongiao"></input>
+                    <p class="tongiao_er" style="display:none;" id="er">Vui lòng nhập tôn giáo</p>
+            </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <a id="ten">Số điện thoại (<a id="sao">*</a>)</a>
+                    <br>
+                    <input type="text" onblur="checkval(this,'phone_er')" id="sdt"></input>
+                    <p class="phone_er" style="display:none;" id="er">Vui lòng nhập số điện thoại</p>
+                </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <a id="ten">email (<a id="sao">*</a>)</a>
+                    <br>
+                    <input type="text" onblur="checkval(this,'email_er')" id="email"></input>
+                    <p class="email_er" style="display:none;" id="er">Vui lòng nhập email</p>
+                </p>
+            </div>
+        </div>
+        <div class= "row">
+            <div class ="col-4 ">
+                <p>
+                     <a id="ten"> Số CMND/CCCD (<a id="sao">*</a>)</a>
+                    <br>
+                    <input type="text" onblur="checkval(this,'CMND_er')" id="cmnd"></input>
+                    <p class="CMND_er" style="display:none;" id="er">Vui lòng nhập CMND/CCCD</p>
+            </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <a id="ten">Ngày cấp (<a id="sao">*</a>)</a></a>
+                    <br>
+                    <input type="date" id="ngaycap"></input>
+                </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <a id="ten">Nơi cấp (<a id="sao">*</a>)</a>
+                    <br>
+                    <input type="text" onblur="checkval(this,'noicap_er')" id="noicap"></input>
+                    <p class="noicap_er" style="display:none;" id="er">Vui lòng nhập nơi cấp</p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p><i><b><u>Thông tin họ khẩu thường trú</u></b></i></p>
+    </div>
+    <div class= "row">
+        <div class ="col-4 ">
+            <p>
+                 <a id="ten"> Tỉnh/Thành phố (<a id="sao">*</a>)</a></a>
+                <br>
+                <select name="lựa chọns" id="tinh">
+                    <option></option>
+                    <option>Nam</option>
+                    <option>Nữ</option>
+                </select>  
+        </p>
+        </div>
+        <div class ="col-4 ">
+            <p>
+            <a id="ten">Quận/Huyện (<a id="sao">*</a>)</a>
+                <br>
+                <select name="lựa chọns" id="quan">
+                    <option></option>
+                    <option>Nam</option>
+                    <option>Nữ</option>
+                </select>  
+            </p>
+        </div>
+        <div class ="col-4 ">
+            <p>
+                <a id="ten">Xã/Phường (<a id="sao">*</a>)</a></a>
+                <br>
+                <select name="lựa chọns" id="xa">
+                    <option></option>
+                    <option>Nam</option>
+                    <option>Nữ</option>
+                </select>  
+            </p>
+        </div>
+    </div>
+    <div class= "row">
+        <div class ="col-4 ">
+            <p>
+                 <a id="ten"> Địa chỉ liên lạc (<a id="sao">*</a>)</a>
+                <br>
+                <input type="text" onblur="checkval(this,'diachi_er')" id="diachilienhe"></input>
+                    <p class="diachi_er" style="display:none;" id="er">Vui lòng nhập địa chỉ liên lạc</p>
+        </p>
+        </div>
+        <div class ="col-8 ">
+            <div class="d-grid gap-2 d-md-block">
+                <p>
+                    <a id="ten">File mềm ảnh thẻ cá nhân 4x6cm (<a id="sao">*</a>)</a> (Định dạng JPG,PNG,JPGE)</a>
+                
+                </p>
+                   <button class="btn btn-link" type="button"><i class="fa-light fa-file"></i>Xem File</button>       
+                   <button class="btn btn-link" type="button"><i class="fa-light fa-trash-can" onclick="deleteForm(this)" id="xoa"></i>Xóa</button>        
+             </div>                
+         </div>               
+                    
+                        
+                   
+                    
+           
+            
+       
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button" ondblclick="showalert()" id="button" onclick="clickval()" >Tiếp theo</a> </button>
+        
+      </div>
+</div>
+</div>
+<br>
+<br>
+<div id="tt">
+    <hr width="99%">
+    <div class= "container-fluid">
+        <div class="headcontainer">
+            <p>
+                <b >
+                    <a id="a1">II.Thông tin nghề nghiệp và hồ sơ cá nhân </a>(Điền đầy đủ thông tin nếu có)
+                </b>
+            </p>
+            <p>
+                <b >
+                    <a id="a2">II.1.Thông tin nghề nghiệp </a>(lưu ý đánh dấu (<a id="sao">*</a>) là mục bắt buộc)
+                </b>
+            </p>
+            <p>
+                <b >
+                    <a id="a3"><i>Ghi chú:chọn file cần tải lên và click "+ tải lên file... * bên cạnh trước khi ấn nút "Tiếp theo"</i></a>
+                </b>
+            </p>
+        </div>
+    <hr width="100%" color="#CCCCCC">
+    
+        <div class= "row">
+            <div class ="col-4 ">
+                <p>
+                    <b> <a id="ten"> Đối tượng dự thi</a></b>
+                    <br>
+                    <select name="lựa chọns" id="gioitinh">
+                        <option></option>
+                        <option>Nam</option>
+                        <option>Nữ</option>
+                    </select>  
+                </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <b><a id="ten">Cán bộ </a></a></b>
+                    <br>
+                    <select name="lựa chọns" id="gioitinh">
+                        <option></option>
+                        <option>Nam</option>
+                        <option>Nữ</option>
+                    </select>  
+                </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <b><a id="ten">Năm bắt đầu công tác</a></b>
+                    <br>
+                    <input type="text" onblur="checkval(this,'namcongtac_er')" id="nambatdau"></input>
+                    <p class="namcongtac_er" style="display:none;" id="er">Vui lòng nhập năm công tác</p>
+                </p>
+            </div>
+        </div>
+        <div class= "row">
+            <div class ="col-4 ">
+                <p>
+                    <b> <a id="ten">Cơ quan công tác</a></b>
+                    <br>
+                    <input type="text" onblur="checkval(this,'coquancongtac_er')" id="coquancongtac"></input>
+                    <p class="coquancongtac_er" style="display:none;" id="er">Vui lòng nhập cơ quan công tác</p>
+            </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <b><a id="ten">Chức vụ</a></b>
+                    <br>
+                    <input type="text" onblur="checkval(this,'chucvu_er')" id="chucvu"></input>
+                    <p class="chucvu_er" style="display:none;" id="er">Vui lòng nhập chúc vụ</p>
+                </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <b><a id="ten">Số năm cônng tác trong lĩnh vực giáo dục</a></b>
+                    <br>
+                    <input type="text" onblur="checkval(this,'sonamcongtac_er')" id="sonamcongtac"></input>
+                    <p class="sonamcongtac_er" style="display:none;" id="er">Vui lòng nhập só năm công tác</p>
+                </p>
+            </div>
+            
+        </div>
+        <div class= "row">
+            <div class="mb-3">
+                <label for="formFile4" class="form-label"><a id="ten">Scan quyết định tuyển dụng, hợp đồng lao động (nếu có):File đính kèm dạng PDF,JPG,PNG</a></label>
+                <input class="form-control" type="file" id="formFile4">
+                <div class="d-grid gap-2 d-md-block">
+                    
+                    <button class="btn btn-link" type="button"><i class="fa-light fa-file"></i>Xem File</button> 
+                   
+                    <button class="btn btn-link" type="button"><i class="fa-light fa-trash-can"></i>Xóa</button>
+                  </div>
+              </div>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button id="bt"><i class="fa-regular fa-arrow-up" ></i><a href="#formFile4" >Tải lên file quyết đinh(hợp đồng)</a> </button>
+              </div>
+            
+        </div>
+        
+        <div class= "row">
+            <p>
+                <b >
+                <a id="a4">II.2.Thông tin nghề nghiệp </a></b>(lưu ý đánh dấu (<a id="sao">*</a>) là mục bắt buộc)
+                
+            </p>
+            <div class="mb-3">
+                <label for="formFile1" class="form-label"><a id="ten">Scan sơ yếu lý lịch có xác nhận của thủ tướng cơ quan hoặc chính quyền nơi thí sinh cư trú(<a id="sao">*</a>) <b>(File đính kèm dạng PDF,PNG,JPG)</b></a></label>
+                <input class="form-control" type="file" id="formFile1">
+                <div class="d-grid gap-2 d-md-block">
+
+                    <button class="btn btn-link" type="button"><i class="fa-light fa-file"></i> Xem File</button>
+                     
+                   
+                    <button class="btn btn-link" type="button"><i class="fa-light fa-trash-can"></i>Xóa</button>
+                    
+                  </div>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button id="bt"><i class="fa-regular fa-arrow-up" ></i><a href="#formFile1">Tải lên file sơ yếu lí lịch</a> </button>
+                  </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="formFile2" class="form-label"><a id="ten">Scan giấy chứng nhận sức khỏe để học tập của bệnh viện đa khoa khôngh quá 6 tháng(<a id="sao">*</a>) <b>(File đính kèm dạng PDF,PNG,JPG)</b></a></label>
+                <input class="form-control" type="file" id="formFile2">
+                <div class="d-grid gap-2 d-md-block">
+
+                    <button class="btn btn-link" type="button"><i class="fa-light fa-file"></i>Xem File</button> 
+                   
+                    <button class="btn btn-link" type="button"><i class="fa-light fa-trash-can"></i>Xóa</button>
+                  </div>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button id="bt"><i class="fa-regular fa-arrow-up" ></i><a href="#formFile2" >Tải lên file giấy khám sức khỏe</a> </button>
+                  </div>
+              </div>
+              <div class="mb-3">
+                <label for="formFile3" class="form-label"><a id="ten">Scan công văn cử đi dự thi và các giấy tờ khác nếu có (File đính kèm dạng PDF,PNG,JPG)</a></label>
+                <input class="form-control" type="file" id="formFile3">
+                <div class="d-grid gap-2 d-md-block">
+
+                    <button class="btn btn-link" type="button"><i class="fa-light fa-file"></i>Xem File</button> 
+                   
+                    <button class="btn btn-link" type="button"><i class="fa-light fa-trash-can"></i>Xóa</button>
+                  </div>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button id="bt"><i class="fa-regular fa-arrow-up" ></i><a href="#formFile3" >Tải lên file giấy tờ khác nếu có</a> </button>
+                  </div>
+              </div>
+        
+    
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary me-md-2" type="button">Trở lại</button>
+            <button class="btn btn-primary" type="button">Tiếp theo</button>
+        </div> 
+        
+        <div class= "row">
+           <p>
+                <b >
+                <a id="a4">III.2.Chứng chỉ nghề nghiệp (nếu có) </a></b>
+                
+        </p>
+            <p>
+                <b >
+                    <a id="a5"><i>Ghi chú:Khai các chứng chỉ tương ứng sau đó chọn nút "+Thêm" bên cạnh</i></a>
+                        </b>
+                    </p>
+            <hr width="90%">
+            <div class ="col-4 ">
+                <p>
+                    <b> <a id="ten">Tên chứng chỉ nghề nghiệp</a></b>
+                    <br>
+                    <input type="text" onblur="checkval(this,'chungchi_er')" id="tenchungchi"></input>
+                    <p class="chungchi_er" style="display:none;" id="er">Vui lòng nhập chứng chỉ nghề nghiệp</p>
+            </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <b><a id="ten">Nơi cấp chứng chỉ nghề nghiệp</a></b>
+                    <br>
+                    <input type="text" onblur="checkval(this,'noicapchungchi_er')" id="noicapchungchi"></input>
+                    <p class="noicapchungchi_er" style="display:none;" id="er">Vui lòng nhập nơi cấp chứng chỉ nghề nghiệp</p>
+                </p>
+            </div>
+            <div class ="col-4 ">
+                <p>
+                    <b><a id="ten">Ngày cấp chứng chỉ nghề nghiệp</a></b>
+                    <br>
+                    <input type="date"></input>
+                </p>
+            </div>
+            <div class= "row">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label"><b><a id="ten">Scan chứng chỉ nghề nghiệp (Nếu có): (File đính kèm dạng PDF,PNG,JPG)</a></b></label>
+                    <input class="form-control" type="file" id="formFile">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-link me-md-2" type="button">+ Thêm</button>
+                      </div>
+                </div>
+                
+            </div>
+            <table class="table table-bordered" id="table">
+                <thead>
+                    <tr>
+                      <th >STT</th>
+                      <th >Tên chứng chỉ nghề nghiệp</th>
+                      <th >Ngày cấp chứng chỉ</th>
+                      <th >Nơi cấp chứng chỉ</th>
+                      <th>Xem File</th>
+                      <th>II</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tbody>
+              </table>
+            <div class= "row">
+                <p>
+                    <b >
+                    <a id="a4">III.3.Văn bằng, chứng chỉ ngoại quốc (nếu có) </a></b>
+                    
+                </p>
+                <p>
+                    <b >
+                    <a id="a5"><i>Ghi chú:Khai các chứng chỉ tương ứng sau đó chọn nút "+Thêm" bên cạnh</i></a>
+                        </b>
+                </p>
+                    <hr width="80%">
+                <div class ="col-3 ">
+                    <p>
+                        <b> <a id="ten">Ngôn ngữ</a></b>
+                        <br>
+                        <select name="lựa chọns" id="gioitinh">
+                            <option></option>
+                            <option>Nam</option>
+                            <option>Nữ</option>
+                        </select>  
+                </p>
+                </div>
+                <div class ="col-3 ">
+                    <p>
+                        <b><a id="ten">Nơi cấp</a></b>
+                        <br>
+                        <input type="text" onblur="checkval(this,'noicapchungchitienganh_er')" id="chungchitienganh"></input>
+                    <p class="noicapchungchitienganh_er" style="display:none;" id="er">Vui lòng nhập nơi cấp </p>
+                    </p>
+                </div>
+                <div class ="col-3 ">
+                    <p>
+                        <b><a id="ten">Loại bằng/Chứng chỉ</a></b>
+                        <br>
+                        <input type="text" onblur="checkval(this,'loaibang_er')" id="bang"></input>
+                    <p class="loaibang_er" style="display:none;" id="er">Vui lòng nhập loại bằng/chứng chỉ</p>
+                    </p>
+                </div>
+                <div class ="col-3 ">
+                    <p>
+                        <b><a id="ten">Ngày cấp</a></b>
+                        <br>
+                        <input type="text"></input>
+                    </p>
+                </div>
+                
+                <div class= "row">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label"><b><a id="ten">Scan văn bằng, chứng chỉ ngoại ngữ (Nếu có): (File đính kèm dạng PDF,PNG,JPG)</a></b></label>
+                        <input class="form-control" type="file" id="formFile">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-link me-md-2" type="button">+ Thêm</button>
+                        </div>
+                    </div>
+                <table class="table table-bordered" id="table">
+                    <thead>
+                        <tr>
+                          <th >STT</th>
+                          <th >Tên chứng chỉ nghề nghiệp</th>
+                          <th >Ngày cấp chứng chỉ</th>
+                          <th >Nơi cấp chứng chỉ</th>
+                          <th> Xem File</th>
+                          <th>II</th>
+                        </tr>
+                      </thead>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    <b >
+                        <a id="a5"><b><i>Ghi chú:Thí sinh có thể sử dụng phần mềm<button class="btn btn-link me-md-2" type="button"><i> https:tool.pdf24.org/en/</i></button>để chuyển ảnh chụp sang định dạng PDF</i></b></a>
+                            </b>
+                        </p>
+                </div>
+</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+
+    </script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="sweetalert2.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        function checkval(elm, erclass){
+            var val = $(elm).val();
+            if (val == '')
+            {
+                $('.'+erclass).slideDown(500)
+                return false
+            }
+            else
+            {
+                $('.'+erclass).slideUp(500)
+                return false
+            }
+              
+        }
+  function clickval()
+  {
+      var arr =document.getElementsByTagName('input');
+    console.log(arr);
+    var hoten = arr[0].value;
+    var ngaysinh = arr[2].value;      
+    var dantoc = arr[4].value;
+    var tongiao= arr[5].value;
+    var sdt = arr[6].value;
+    var email = arr[7].value;
+    var cmnd = arr[8].value;
+    var ngaycap = arr[9].value;
+
+    if(hoten == ""  || ngaysinh == "" ||  dantoc == "" || tongiao == "" || sdt == "" || email == "" || cmnd == "" || ngaycap == ""|| diachilienhe == "" ) 
+    {
+        document.getElementById('button').addEventListener('click',function(){
+                toastr.error("Cần cập nhật đầy đủ thông tin","Lỗi")
+                })
+                toastr.error("Cần cập nhật thông tin","Lỗi")
+    }
+    else
+    {
+        document.getElementById('button').addEventListener('click',function showalert(){
+                toastr.success("Thông tin đã được lưu","Thành công")})
+                
+                toastr.success("Thông tin đã được lưu","Thành công")
+
+    }
+    var choice = confirm(' thông tin \n'+ hoten + "\n" + gioitinh + "\n" + ngaysinh + "\n" + noisinh + "\n" + dantoc + "\n" + tongiao + "\n" + sdt + "\n" + email + "\n" + cmnd + "\n" + ngaycap + "\n" + tinh+ "\n" + quan + + "\n" + xa + "\n" + diachilienhe + "\n" + nambatdau + "\n" + coquancongtac + "\n" + chucvu + "\n" + sonamcongtac + "\n" + tenchungchi + "\n" + noicapchungchi + "\n" + chungchitienganh + "\n" + bang)
+    if(choice == 1){
+        alert('Thông tin đã được gửi');
+    }
+    
+  }
+  function showalert()
+        {
+            alert('Chào mừng bạn đến với trang');
+        }
+        
+        function showalert()
+        {
+            Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Lỗi hễ thống xin vui lòng đợi!',
+    })
+        }
+    </script>
+    
+    <script type="text/javascript">
+        function deleteForm()
+        {
+            document.getElementById('#xoa')[0].reset();
+        }
+           
+   </script>
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
